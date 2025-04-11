@@ -1,0 +1,10 @@
+<invoice>
+    <invoiceNumber>INV-2025-002</invoiceNumber>
+    <amount>15000.0</amount>
+    <currency>USD</currency>
+    <customer>
+        <name>OpenAI Corp</name>
+        <industry>AI Research</industry>
+        <revenue>300.0</revenue>
+    </customer>
+</invoice>

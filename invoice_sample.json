@@ -1,0 +1,11 @@
+{
+    "invoiceNumber": "INV-2025-003",
+    "amount": 22000.0,
+    "currency": "USD",
+    "customer": {
+      "name": "Amazon Inc",
+      "industry": "E-Commerce",
+      "revenue": 800.0
+    }
+  }
+  
