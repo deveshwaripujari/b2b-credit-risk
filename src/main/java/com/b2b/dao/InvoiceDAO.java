@@ -10,17 +10,14 @@ public class InvoiceDAO {
 
     private static SessionFactory sessionFactory;
 
-    // Static block to initialize Hibernate SessionFactory
     static {
         try {
-            // Loads configuration from persistence.xml (via hibernate.cfg.xml fallback)
             sessionFactory = new Configuration().configure().buildSessionFactory();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError("❌ Failed to create SessionFactory: " + ex);
         }
     }
 
-    // Save an invoice to the database
     public void saveInvoice(Invoice invoice) {
         Transaction transaction = null;
         try (Session session = sessionFactory.openSession()) {
@@ -34,18 +31,13 @@ public class InvoiceDAO {
         }
     }
 
-    // Load invoice by ID
     public Invoice getInvoiceById(int id) {
         try (Session session = sessionFactory.openSession()) {
             return session.get(Invoice.class, id);
         }
     }
 
-    // Close factory when app shuts down
     public static void shutdown() {
-        if (sessionFactory != null) {
-            sessionFactory.close();
-        }
+        if (sessionFactory != null) sessionFactory.close();
     }
 }
-
