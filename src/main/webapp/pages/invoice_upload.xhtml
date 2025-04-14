@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <title>Invoice Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        .section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            background-color: #f9f9f9;
+        }
+        .output-box {
+            margin-top: 10px;
+            padding: 10px;
+            background: #272822;
+            color: #f8f8f2;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <h1>Invoice Dashboard</h1>
+
+    <!-- Upload Section -->
+    <div class="section">
+        <h2>Upload Invoice</h2>
+        <h:form enctype="multipart/form-data">
+            <p:fileUpload value="#{fileUploadBean.file}" mode="simple" />
+            <p:commandButton value="Upload" action="#{fileUploadBean.upload}" ajax="false" />
+        </h:form>
+    </div>
+
+    <!-- Invoice Viewer -->
+    <div class="section">
+        <h2>View Invoice by ID</h2>
+        <h:form>
+            <p:inputText value="#{invoiceViewerBean.invoiceId}" label="Invoice ID" />
+            <p:commandButton value="Fetch Invoice" action="#{invoiceViewerBean.fetchInvoice}" ajax="false" />
+            <h:panelGroup rendered="#{not empty invoiceViewerBean.invoiceJson}">
+                <div class="output-box">#{invoiceViewerBean.invoiceJson}</div>
+            </h:panelGroup>
+        </h:form>
+    </div>
+
+    <!-- Credit Limit Viewer -->
+    <div class="section">
+        <h2>View Customer Credit Limit</h2>
+        <h:form>
+            <p:inputText value="#{creditLimitViewerBean.customerId}" label="Customer ID" />
+            <p:commandButton value="Fetch Credit Limit" action="#{creditLimitViewerBean.fetchLimit}" ajax="false" />
+            <h:panelGroup rendered="#{not empty creditLimitViewerBean.limitJson}">
+                <div class="output-box">#{creditLimitViewerBean.limitJson}</div>
+            </h:panelGroup>
+        </h:form>
+    </div>
+</h:body>
+</html>

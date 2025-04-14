@@ -1,10 +1,13 @@
 com/b2b/dao/InvoiceImporter.class
-com/b2b/dao/InvoiceDAO.class
-com/b2b/controller/CustomerResource.class
+com/b2b/controller/FileUploadBean.class
 com/b2b/service/CreditScorerService.class
 com/b2b/dao/CustomerDAO.class
 com/b2b/controller/InvoiceResource.class
-com/b2b/model/Invoice.class
 com/b2b/model/CreditScore.class
 com/b2b/credit/App.class
+com/b2b/dao/InvoiceDAO.class
+com/b2b/controller/CreditLimitViewerBean.class
+com/b2b/controller/CustomerResource.class
+com/b2b/model/Invoice.class
+com/b2b/controller/InvoiceViewerBean.class
 com/b2b/model/Customer.class
