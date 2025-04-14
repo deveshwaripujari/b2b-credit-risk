@@ -3,39 +3,54 @@
 ## 🔹 Day 1: Backend Core + DB + File Parsing
 
 ### ✅ Features Implemented:
-- ✅ Set up Maven project with Hibernate + MySQL integration
-- ✅ Created entity models: `Customer`, `Invoice`
-- ✅ Configured `persistence.xml` for Hibernate
-- ✅ Built DAO layer: `InvoiceDAO`, `InvoiceImporter`
-- ✅ Parsed XML/JSON invoices to Java using DOM + org.json
-- ✅ Inserted parsed data into MySQL using Hibernate
-- ✅ Wrote & passed JUnit tests for DAO and parser logic
+- Set up Maven project with Hibernate + MySQL
+- Created entity models: `Customer`, `Invoice`
+- Configured `persistence.xml`
+- Built DAO layer (`InvoiceDAO`, `InvoiceImporter`)
+- Parsed XML/JSON files and inserted into DB
+- Wrote and passed JUnit tests
 
-### Technologies Used:
-- Java 8, Maven, Hibernate (JPA), MySQL
-- JSON & XML parsing (DOM & org.json)
-- JUnit 4, Assert methods
-- Tested with `mvn clean test`
+### 🛠️ Technologies:
+- Java 8, Hibernate (JPA), MySQL, Maven
+- XML (DOM), JSON (`org.json`)
+- JUnit 4
 
+---
 
-## 🔷 Day 2: REST API + DAO Verification
+## 🔹 Day 2: REST API + DAO Verification
 
-✅ Implemented `InvoiceResource` and `CustomerResource` with:
-- `GET /api/invoice/{id}`: Fetch invoice with customer info
-- `POST /api/invoice/upload`: Upload invoice JSON/XML to DB
-- `GET /api/customer/{id}/limit`: Credit scoring logic (basic)
+### ✅ Features Implemented:
+- `GET /api/invoice/{id}` – Fetch invoice with customer
+- `POST /api/invoice/upload` – Upload invoice file
+- `GET /api/customer/{id}/limit` – Return credit limit
 
-✅ Verified using:
-- `curl` commands for GET and POST
-- Database insertions via Hibernate
-- WAR packaging and local Tomcat deployment
+### 🔎 Verified Using:
+- `curl` + Tomcat logs
+- Hibernate DB entries
+- WAR deploy to Tomcat 9
 
- Technologies Used:
+### 🛠️ Technologies:
 - Jersey (JAX-RS), JSON/XML annotations
 - Hibernate, MySQL, Maven
-- `curl`, `unzip`, Tomcat logs
 
- All endpoints working at:
-- http://localhost:8080/b2b/api/invoice/1
-- http://localhost:8080/b2b/api/customer/1/limit
+---
+
+## 🔹 Day 3: JSF + PrimeFaces UI Dashboard
+
+### ✅ Features Implemented:
+- Upload invoice via JSF form (`FileUploadBean`)
+- View invoice by ID (`InvoiceViewerBean`)
+- View customer credit limit (`CreditLimitViewerBean`)
+- Pretty JSON output and styled UI sections
+
+### 🛠️ Technologies:
+- JSF 2.2 (Mojarra), PrimeFaces 11
+- ManagedBeans, `HttpURLConnection`
+- XHTML, basic CSS
+
+---
+
+### Screenshot
+
+<img src="assets/Day3-UI.png" alt="Invoice Dashboard UI" width="800"/>
 
